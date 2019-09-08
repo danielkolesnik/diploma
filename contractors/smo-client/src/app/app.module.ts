@@ -3,13 +3,13 @@ import { NgModule } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { LoginComponent } from './features/login/login.component';
-import { LoginModule } from './features/login/login.module';
-import { NotFoundComponent } from './not-found/not-found.component';
-import { RegistrationComponent } from './registration/registration.component';
-import { MenuLayoutModule } from './layouts/menu-layout/menu-layout.module';
+import { LoginComponent } from './pages/login/login.component';
+import { LoginModule } from './pages/login/login.module';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { LayoutModule } from './pages/layout.module';
 import { StudentService } from './services/student/student.service';
 import { httpInterceptorProviders } from './interceptors';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 
 
@@ -19,14 +19,13 @@ import { httpInterceptorProviders } from './interceptors';
     AppComponent,
     LoginComponent,
     NotFoundComponent,
-    RegistrationComponent,
-  
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     LoginModule,
-    MenuLayoutModule,
+    LayoutModule,
     AppRoutingModule,
   ],
   providers: [StudentService, httpInterceptorProviders],

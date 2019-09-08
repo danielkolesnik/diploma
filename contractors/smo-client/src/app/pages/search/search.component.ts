@@ -98,7 +98,7 @@ export class SearchComponent implements OnInit {
   public selectStudent(value: SearchStudentResultInterface): void {
     this.studentService.currentStudent = value;
 
-    this.router.navigate(['/studentInfo']);
+    this.router.navigate(['/student-info']);
   }
 
 }

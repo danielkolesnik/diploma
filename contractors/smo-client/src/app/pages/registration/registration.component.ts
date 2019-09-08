@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-registration',
-  templateUrl: './registration.component.html',
-  styleUrls: ['./registration.component.css']
+  selector: '[id=registration]',
+  templateUrl: './registration.component.html'
 })
 export class RegistrationComponent implements OnInit {
 
@@ -12,4 +11,11 @@ export class RegistrationComponent implements OnInit {
   ngOnInit() {
   }
 
+  onSubmit() {
+
+  }
+
+  close() {
+
+  }
 }

@@ -22,10 +22,10 @@ const routes: Routes = [
         path: 'registration',
         loadChildren: '../../features/registration/registration.module#RegistrationModule',
       },
-      {
-        path: 'search',
-        loadChildren: '../../features/search/search.module#SearchModule'
-      }
+      // {
+      //   path: 'search',
+      //   loadChildren: '../../features/search/search.module#SearchModule'
+      // }
     ]
   }
 ];

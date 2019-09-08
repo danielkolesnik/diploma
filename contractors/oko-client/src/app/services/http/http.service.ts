@@ -3,8 +3,8 @@ import { LocalStorageService } from '../local-storage.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
-import { PostRequestOptionsInterface } from './interfaces/post-request-options';
-import { PutRequestOptionsInterface } from './interfaces/put-request-options';
+// import { PostRequestOptionsInterface } from './interfaces/post-request-options';
+// import { PutRequestOptionsInterface } from './interfaces/put-request-options';
 
 @Injectable({
   providedIn: 'root'

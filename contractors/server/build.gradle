@@ -28,6 +28,13 @@ dependencies {
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-aop', version: '2.1.2.RELEASE'
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '2.1.2.RELEASE'
     compile group: 'org.springframework.security', name: 'spring-security-jwt', version: '1.0.9.RELEASE'
+    // to fix build error on Java 11+
+    // (Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]:
+    // Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default]
+    // Unable to build Hibernate SessionFactory; nested exception is org.hibernate.MappingException:
+    // Could not get constructor for org.hibernate.persister.entity.SingleTableEntityPersister)
+    compile group: 'org.javassist', name: 'javassist', version: '3.25.0-GA'
+
 
     compile group: 'com.microsoft.sqlserver', name: 'mssql-jdbc', version: '7.0.0.jre8'
     compile group: 'io.jsonwebtoken', name: 'jjwt', version: '0.9.0'

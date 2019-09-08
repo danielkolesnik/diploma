@@ -21,7 +21,7 @@
     ```
 
 ### How to setup development environment
-#### Prerequriments:
+#### Requirements:
 - Git (https://www.atlassian.com/git/tutorials/install-git#windows)
 - JDK 1.8 or higher (https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
 - IntelliJ IDEA (https://www.jetbrains.com/idea/download/)
@@ -50,3 +50,24 @@ git clone git@github.com:olegbarmin/diploma.git
 11. Verify tests done successfully:
 ![tests](tutorial/resources/testing_done.jpg)
 10. Done.
+
+### How to run development server
+#### Requirements:
+- [Node.js](https://nodejs.org/)
+
+#### Steps to run the project:
+1. Start the Docker with database server, running following command:
+
+    ``docker run  -p 1433:1433 <IMAGE_ID>``
+2. Assemble the server module:
+
+    ``./gradlew :server:assemble``
+3. Assemble the client-server module with one of clients applications (```smo``` | ```oko```):
+   
+   ``./gradlew :client-server:assemble -Pclient=<CLIENT_NAME>``
+4. Launch the server:
+
+    ``java -jar server/build/libs/server-1.0-SNAPSHOT.jar``
+5. Launch the client:
+
+    ``java -jar client-server/build/libs/client-server-<CLIENT_NAME>-1.0-SNAPSHOT.jar``

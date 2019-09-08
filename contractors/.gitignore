@@ -1,15 +1,19 @@
-/.idea/
+.idea
 .idea/
-/.gradle/
+.idea/*.*
+/.idea/
+.gradle/
 /out/
 /oko-client/out/
-/oko-client/node_modules/
-/smo-client/node_modules/
 /oko-client/dist/
 /smo-client/dist/
 /server/out/
 /server/build/
 /gradle/
 /build/
+build/
 
-node_modules/
+**/.gradle
+**/node_modules
+**/build
+**/.idea

@@ -1,4 +1,5 @@
 /.idea/
+.idea/
 /.gradle/
 /out/
 /oko-client/out/
@@ -10,3 +11,5 @@
 /server/build/
 /gradle/
 /build/
+
+node_modules/

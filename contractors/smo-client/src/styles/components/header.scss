@@ -2,4 +2,12 @@ header {
   position: sticky;
   top: 0;
   z-index: 1071;
+
+  .navbar {
+    background-color: #00377b;
+
+    .header-logo {
+      width: 64px;
+    }
+  }
 }

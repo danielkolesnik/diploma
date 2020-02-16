@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {CollapseModule} from "ngx-bootstrap";
+import {CollapseModule, TabsModule} from "ngx-bootstrap";
 
 
 import { LayoutComponent } from './layout.component';

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import moment from "moment/src/moment";
-import { interval } from 'rxjs';
-import { map } from 'rxjs/operators';
+// import moment from "moment/src/moment";
+// import { interval } from 'rxjs';
+// import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
 
 @Component({

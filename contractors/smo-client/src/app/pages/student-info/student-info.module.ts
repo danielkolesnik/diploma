@@ -8,6 +8,7 @@ import { NostrificationComponent } from './nostrification/nostrification.compone
 import { DocumentComponent } from './document/document.component';
 import { PersonalDataComponent } from './personal-data/personal-data.component';
 import { FormsModule } from '@angular/forms';
+import {TabsModule} from "ngx-bootstrap";
 
 @NgModule({
   declarations: [
@@ -20,7 +21,9 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     FormsModule,
-    StudentInfoRoutingModule
+    StudentInfoRoutingModule,
+    TabsModule.forRoot(),
+
   ]
 })
 export class StudentInfoModule { }

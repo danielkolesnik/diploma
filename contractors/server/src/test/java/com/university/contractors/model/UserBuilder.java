@@ -1,5 +1,8 @@
 package com.university.contractors.model;
 
+import com.university.contractors.model.jpa.domains.UserRole;
+import com.university.contractors.model.jpa.entity.User;
+
 public final class UserBuilder {
     private User user;
 

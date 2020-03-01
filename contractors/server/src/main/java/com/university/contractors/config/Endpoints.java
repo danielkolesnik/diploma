@@ -53,4 +53,6 @@ public interface Endpoints {
 
     String DIRECTIONS = ENTITY_PREFIX + "/directions";
     String DIRECTION_BY_ID = DIRECTIONS + ID_PARAMETER;
+
+    String REPORT = ENTITY_PREFIX + "/report";
 }

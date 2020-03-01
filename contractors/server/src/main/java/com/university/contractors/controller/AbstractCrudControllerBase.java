@@ -1,6 +1,6 @@
 package com.university.contractors.controller;
 
-import com.university.contractors.model.IdEntity;
+import com.university.contractors.model.jpa.entity.IdEntity;
 import org.apache.commons.lang3.ObjectUtils;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.http.HttpStatus;
@@ -46,7 +46,7 @@ public abstract class AbstractCrudControllerBase<I, E extends IdEntity<I>> {
         return crudRepository.save(entityToUpdateWith);
     }
 
-    void delete(I id) {
+    I delete(I id) {
         boolean isEntityWithGivenIdExists = crudRepository.existsById(id);
 
         if (!isEntityWithGivenIdExists) {
@@ -55,5 +55,7 @@ public abstract class AbstractCrudControllerBase<I, E extends IdEntity<I>> {
         }
 
         crudRepository.deleteById(id);
+
+        return id;
     }
 }

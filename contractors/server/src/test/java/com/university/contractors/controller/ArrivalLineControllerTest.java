@@ -1,7 +1,7 @@
 package com.university.contractors.controller;
 
 import com.university.contractors.config.Endpoints;
-import com.university.contractors.model.ArrivalLine;
+import com.university.contractors.model.jpa.entity.ArrivalLine;
 import com.university.contractors.model.ArrivalLineBuilder;
 import io.restassured.response.Response;
 

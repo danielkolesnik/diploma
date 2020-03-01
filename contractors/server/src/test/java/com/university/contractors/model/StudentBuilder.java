@@ -1,5 +1,8 @@
 package com.university.contractors.model;
 
+import com.university.contractors.model.jpa.entity.Country;
+import com.university.contractors.model.jpa.entity.Student;
+
 import java.util.Date;
 
 public final class StudentBuilder {

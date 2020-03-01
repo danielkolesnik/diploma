@@ -1,5 +1,7 @@
 package com.university.contractors.model;
 
+import com.university.contractors.model.jpa.entity.EducationForm;
+
 public final class EducationFormBuilder {
     private EducationForm educationForm;
 

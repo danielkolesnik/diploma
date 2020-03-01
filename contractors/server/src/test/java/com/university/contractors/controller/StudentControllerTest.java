@@ -1,7 +1,7 @@
 package com.university.contractors.controller;
 
 import com.university.contractors.config.Endpoints;
-import com.university.contractors.model.Student;
+import com.university.contractors.model.jpa.entity.Student;
 import com.university.contractors.model.StudentBuilder;
 import io.restassured.response.Response;
 

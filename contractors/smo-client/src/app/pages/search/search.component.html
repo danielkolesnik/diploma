@@ -1,0 +1,166 @@
+<div class="container-fluid">
+  <form [formGroup]="searchForm" class="form-horizontal" (ngSubmit)="onSubmit()" role="form">
+
+
+    <div class="form-group form-inline justify-content-center">
+      <label for="surname" class="col-sm-2 col-form-label">Прізвище:</label>
+      <div class="col-3">
+        <input formControlName="surname" id="surname" class="form-control form-control-sm" type="text" name="firstname"/>
+      </div>
+
+      <label for="department" class="col-sm-2 col-form-label">Факультет:</label>
+        <div class="col-3">
+          <select (change)="onFacultySelected()" id="department" formControlName="faculty" class="form-control form-control-sm col-8" name="department">
+            <option [ngValue]="null"></option>
+            <option *ngFor="let faculty of faculties$ | async" [ngValue]="faculty">{{faculty.facultyName}}</option>
+          </select>
+        </div>
+    </div>
+
+
+      <div class="form-group form-inline justify-content-center">
+        <label for="name" class="col-sm-2 col-form-label">Ім'я:</label>
+        <div class="col-3">
+          <input formControlName="name" class="form-control form-control-sm" id="name" type="text" name="name"/>
+        </div>
+        <label for="educprogram" class="col-sm-2 col-form-label">Освітня програма:</label>
+        <div class="col-3">
+          <select formControlName="direction" id="educprogram" class="form-control form-control-sm col-8" name="educprogram" required>
+            <option [ngValue]="null"></option>
+            <option *ngFor="let item of directions$ | async" [ngValue]="item">{{item.directionName}}</option>
+          </select>
+        </div>
+      </div>
+
+
+      <div class="form-group form-inline justify-content-center">
+          <label for="dateOfBirth" class="col-sm-2 col-form-label" >Дата народження:</label>
+          <div class="col-3">
+            <input formControlName="dataOfBirth" class="form-control form-control-sm col-8" id="dateOfBirth" type="date" name="dateOfBirth">
+          </div>
+          <label for="program" class="col-sm-2 col-form-label">Програма:</label>
+          <div class="col-3">
+            <select formControlName="educationProgram" id="program" class=" col-8 form-control form-control-sm" name="program">
+              <option [ngValue]="null"></option>
+              <option *ngFor="let item of educationPrograms$ | async" [ngValue]="item">{{item.educProgName}}</option>
+            </select>
+        </div>
+      </div>
+
+
+      <div class = "form-group form-inline justify-content-center">
+        <label for="nationality"class="col-sm-2 col-form-label">Національність:</label>
+        <div class="col-3">
+            <select class="form-control form-control-sm" id="nationality" name="nationality">
+              <option></option>
+              <option></option>
+            </select>
+          </div>
+        <label for="level" class="col-sm-2 col-form-label">Рівень:</label>
+        <div class="col-3">
+            <select formControlName="educationLevel" id="level" class="form-control form-control-sm col-8" name="level">
+              <option [ngValue]="null"></option>
+              <option *ngFor="let item of educationLevels$ | async" [ngValue]="item">{{item.educLevelName}}</option>
+            </select>
+        </div>
+      </div>
+
+
+      <div class="form-group form-inline justify-content-center">
+        <label for="country" class="col-sm-2 col-form-label">Країна:</label>
+        <div class = "col-3">
+            <select formControlName="country" id="country" class="form-control form-control-sm col-8" name="country">
+              <option [ngValue]="null"></option>
+              <option *ngFor="let item of countries$ | async" [ngValue]="item">{{item.countryNameUa}}</option>
+            </select>
+        </div>
+        <label for="educform" class="col-sm-2 col-form-label">Форма навчання:</label>
+        <div class="col-3">
+          <select formControlName="educationForm" id="educform" class="form-control form-control-sm col-8" name="educform">
+              <option [ngValue]="null"></option>
+              <option *ngFor="let item of educationForms$ | async" [ngValue]="item">{{item.educFormName}}</option>
+          </select>
+        </div>
+      </div>
+
+
+      <div class="form-group form-inline justify-content-center">
+        <label for="contractNumber" class="col-sm-2 col-form-label">Контракт №:</label>
+        <div class="col-3">
+          <input formControlName="contractNumber" id="contractNumber" class="form-control form-control-sm" type="text">
+        </div>
+        <label for="arrivalLine" class="col-sm-2 col-form-label">Лінія прибуття:</label>
+        <div class="col-3">
+            <select formControlName="arrivalLine" id="arrivalLine" class="form-control form-control-sm col-8" name="lineArrive">
+                <option [ngValue]="null"></option>
+                <option *ngFor="let item of arrivalLines$ | async" [ngValue]="item">{{item.arrivalCenterName}}</option>
+            </select>
+        </div>
+      </div>
+
+
+      <div class="form-group form-inline justify-content-center">
+        <label for="course" class="col-sm-2 col-form-label">Курс:</label>
+        <div class="col-3">
+          <input formControlName="course" id="course" class="form-control form-control-sm col-8" type="number" min="1" name="course">
+        </div>
+
+        <label for="language" class="col-sm-2 col-form-label">Мова: </label>
+        <div class="col-3">
+            <select formControlName="educationLanguage" id="language" class="form-control form-control-sm col-8" name="language">
+                <option [ngValue]="null"></option>
+                <option *ngFor="let item of educationLanguage$ | async" [ngValue]="item">{{item.educLanguageName}}</option>
+            </select>
+        </div>
+      </div>
+
+
+      <div class="row justify-content-end">
+        <div class="col-auto">
+          <button class="btn btn-success" type="submit">Знайти</button>
+        </div>
+        <button type="button" class="btn btn-warning" (click)="resetForm()">Очистити</button>
+      </div>
+
+
+  </form>
+
+
+  <div class="row">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">№</th>
+          <th scope="col">П.І.Б</th>
+          <th scope="col">Контракт</th>
+          <th scope="col">Країна</th>
+          <th scope="col">Курс</th>
+          <th scope="col">Форма навчання</th>
+          <th scope="col">Факультет</th>
+          <th scope="col">Освіт.програма</th>
+          <th scope="col">Рівень</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of searchResult$ | async; let i=index">
+          <td>{{i+1}}</td>
+          <td>{{item.student.surname}} {{item.student.name}} {{item.student.middleName}}</td>
+          <td>{{item.contract.contractNumber}}</td>
+          <td>{{item.country.countryNameUa}}</td>
+          <td>{{item.course}}</td>
+          <td>{{item.educationForm.educFormName}}</td>
+          <td>{{item.faculty.facultyName}}</td>
+          <td>{{item.contract.direction.directionName}}</td>
+          <td>{{item.educationLevel.educLevelName}}</td>
+          <td>
+            <button type="button" class="btn btn-primary" (click)="selectStudent(item)">Вибрати</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<!-- <h4 *ngFor="let item of searchResult$ | async; let i=index">{{i+1}}. {{item.student.name}}</h4> -->

@@ -1,9 +1,9 @@
 package com.university.contractors.service;
 
 import com.university.contractors.controller.payload.SignUpUser;
-import com.university.contractors.model.User;
-import com.university.contractors.model.UserRole;
-import com.university.contractors.repository.UserRepository;
+import com.university.contractors.model.jpa.entity.User;
+import com.university.contractors.model.jpa.domains.UserRole;
+import com.university.contractors.repository.jpa.UserRepository;
 import org.apache.commons.lang3.ObjectUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

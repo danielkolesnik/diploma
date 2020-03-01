@@ -1,7 +1,7 @@
 package com.university.contractors.controller;
 
 import com.university.contractors.config.Endpoints;
-import com.university.contractors.model.Country;
+import com.university.contractors.model.jpa.entity.Country;
 import com.university.contractors.model.CountryBuilder;
 import io.restassured.response.Response;
 

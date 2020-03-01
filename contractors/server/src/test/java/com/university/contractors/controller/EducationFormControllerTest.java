@@ -1,7 +1,7 @@
 package com.university.contractors.controller;
 
 import com.university.contractors.config.Endpoints;
-import com.university.contractors.model.EducationForm;
+import com.university.contractors.model.jpa.entity.EducationForm;
 import com.university.contractors.model.EducationFormBuilder;
 import io.restassured.response.Response;
 

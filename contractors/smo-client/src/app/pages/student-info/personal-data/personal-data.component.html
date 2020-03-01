@@ -1,0 +1,245 @@
+<div class="container">
+  <div class="row">
+    <div class="col-2">
+      <h5>Статус:</h5>
+    </div>
+    <div class="col">
+      <input name="status">
+    </div>
+
+  </div>
+  <form (ngSubmit)="onSubmit()">
+    <label><b>Персональні дані:</b></label>
+    <div class="block">
+      <div class="row">
+        <div class="col-sm">
+          <div class="form-group">
+            <label for="firstName">Прізвище:</label>
+            <input type="text" class="form-control" id="firstName" name="firstname" value="{{student.student.surname}}"/>
+          </div>
+        </div>
+        <div class="col-sm">
+          <div class="form-group">
+            <label for="name">Ім'я:</label>
+            <input type="text" class="form-control" id="name" name="name" value="{{student.student.name}}"/>
+          </div>
+        </div>
+
+        <div class="col-sm">
+          <div class="form-group">
+            <label for="patronymic">По батькові:</label>
+            <input type="text" class="form-control" id="patronymic" name="patronymic" value="{{student.student.middleName}}"/>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm">
+          <div class="form-group">
+            <label for="country">Країна:</label>
+            <select class="form-control" id="country" name="country">
+              <option>{{student.country.countryNameUa}}</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-sm">
+          <div class="form-group">
+            <label for="dateOfBirth">Дата народження:</label>
+            <input class="form-control" id="dateOfBirth" type="date" name="dateOfBirth" value="{{student.student.dateOfBirth}}">
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <label><b>Навчання:</b></label>
+    <div class="block">
+
+      <div class="row">
+        <div class="col-sm">
+          <div class="form-group">
+            <label for="department">Факультет: </label>
+            <select class="form-control" id="department" name="department">
+              <option>{{student.faculty.facultyName}}</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-sm">
+          <div class="form-group">
+            <label for="educationProgram">Освітня програма:</label>
+            <select class="form-control" id="educationProgram" name="educprogram">
+              <option>{{student.direction.directionName}}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm">
+          <div class="form-group">
+            <label for="language">Мова: </label>
+            <select class="form-control" id="language" name="language">
+              <option>{{student.contract.educationLanguage.educLanguageName}}</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="col-sm">
+          <div class="form-group">
+            <label for="course">Курс:</label>
+            <input class="form-control" id="course" type="number" min="1" name="course" value="{{student.course}}">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm">
+          <div class="form-group">
+            <label for="educationForm">Форма навчання:</label>
+            <select class="form-control" id="educationForm" name="educform">
+              <option>{{student.educationForm.educFormName}}</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="col-sm">
+          <div class="form-group">
+            <label for="educationLevel">Рівень:</label>
+            <select class="form-control" id="educationLevel" name="level">
+              <option>{{student.educationLevel.educLevelName}}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm">
+          <div class="form-group">
+            <label for="highEducation">Вища освіта:</label>
+            <select class="form-control" id="highEducation" name="higheduc">
+              <option>{{student.contract.educationProgram.educProgName}}</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="col-sm">
+          <div class="form-group">
+            <label for="yearsOfEducation">Кількість років навчання:</label>
+            <input class="form-control" id="yearsOfEducation" type="number" min="1" name="countOfYears" value="{{student.contract.yearsOfEduc}}">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm">
+          <div class="form-group">
+            <label for="dateIn">Дата зачислення:</label>
+            <input class="form-control" id="dateIn" type="text" name="dataEnter" value="{{student.contract.dateIn}}">
+          </div>
+        </div>
+
+        <div class="col-sm">
+          <div class="form-group">
+            <label for="dateEnd">Планована дата закінчення:</label>
+            <input class="form-control" id="dateEnd" type="date" name="dataEnd">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm">
+          <div class="form-group">
+            <label for="orderNumber">Наказ №:</label>
+            <input class="form-control" id="orderNumber" type="tel" name="numberOfOrder">
+          </div>
+        </div>
+
+        <div class="col-sm">
+          <div class="form-group">
+            <label for="orderDate">Дата наказу:</label>
+            <input class="form-control" id="orderDate" type="date" name="dateOrder">
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <label><b>Контракт:</b></label>
+    <div class="block">
+
+      <div class="row">
+        <div class="col-sm">
+          <div class="form-group">
+            <label for="contractNumber">Контракт №:</label>
+            <input type="text" class="form-control" id="contractNumber" value="{{student.contract.contractNumber}}">
+          </div>
+        </div>
+        <div class="col-sm">
+          <div class="form-group">
+            <label for="contractDate">Дата контракта:</label>
+            <input type="date" class="form-control" id="contractDate" value="{{student.contract.contractDate}}">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm">
+          <div class="form-group">
+            <label for="arrivalLine">Лінія прибуття:</label>
+            <select class="form-control" id="arrivalLine" name="lineArrive">
+              <option></option>
+              <option></option>
+            </select>
+          </div>
+        </div>
+
+        <div class="col-sm">
+          <div class="form-group">
+            <label for="note">Примітка:</label>
+            <input class="form-control" id="note" type="text" name="note">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <button class="btn btn-link" (click)="toggleOrders()"><b>Накази:</b></button>
+    </div>
+    <div class="row">
+      <table class="table table-bordered" *ngIf="showOrders">
+        <thead>
+          <tr>
+            <th scope="col">Тип наказу</th>
+            <th scope="col">№ наказу</th>
+            <th scope="col">Дата наказу</th>
+            <th scope="col">Дата в наказі</th>
+            <th scope="col">Коментар</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+
+    <div class="row justify-content-center">
+      <button class="btn btn-link" (click)="toggleContracts()"><b>Контракти:</b></button>
+      <table class="table table-bordered" *ngIf="showContracts">
+        <thead>
+          <tr>
+            <th scope="col">№ контракта</th>
+            <th scope="col">Дата контракта</th>
+            <th scope="col">Дата закінчення</th>
+            <th scope="col">Статус</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+
+
+
+    <div class="row">
+      <div class="col-sm">
+        <button class="btn btn-danger" (click)="close()">Закрити</button>
+        <button class="btn btn-success" type="submit">Зберегти</button>
+      </div>
+    </div>
+
+  </form>
+</div>

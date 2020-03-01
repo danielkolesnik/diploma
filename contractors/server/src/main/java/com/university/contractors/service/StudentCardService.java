@@ -1,15 +1,16 @@
 package com.university.contractors.service;
 
 import com.google.common.collect.Lists;
-import com.university.contractors.model.Contract;
-import com.university.contractors.model.Order;
-import com.university.contractors.model.Student;
-import com.university.contractors.model.StudentCard;
-import com.university.contractors.repository.ContractRepository;
-import com.university.contractors.repository.StudentRepository;
+import com.university.contractors.model.jpa.entity.Contract;
+import com.university.contractors.model.jpa.entity.Order;
+import com.university.contractors.model.jpa.entity.Student;
+import com.university.contractors.model.data.StudentCard;
+import com.university.contractors.repository.jpa.ContractRepository;
+import com.university.contractors.repository.jpa.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -43,14 +44,14 @@ public class StudentCardService {
         studentContracts.ifPresent((studentCard::setContracts)); // set all contracts
 
         studentContracts.orElse(Lists.newArrayList()).stream() // set current contract
-                .filter(Contract::getActive)
+                .filter(Contract::getIsActive)
                 .findFirst()
                 .ifPresent(studentCard::setCurrentContract);
 
         final List<Order> orders = studentContracts.orElse(Lists.newArrayList())
                 .stream()
                 .map(Contract::getOrders)
-                .flatMap(List::stream)
+                .flatMap(Collection::stream)
                 .collect(Collectors.toList());
 
         studentCard.setOrders(orders);

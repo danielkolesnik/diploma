@@ -1,4 +1,4 @@
-package com.university.contractors.repository;
+package com.university.contractors.repository.jpa;
 
 import com.google.common.collect.Lists;
 import com.university.contractors.controller.payload.Nationality;

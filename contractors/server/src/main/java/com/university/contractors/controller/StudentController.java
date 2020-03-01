@@ -2,7 +2,7 @@ package com.university.contractors.controller;
 
 import com.university.contractors.config.Endpoints;
 import com.university.contractors.model.jpa.entity.Student;
-import com.university.contractors.repository.StudentRepository;
+import com.university.contractors.repository.jpa.StudentRepository;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;

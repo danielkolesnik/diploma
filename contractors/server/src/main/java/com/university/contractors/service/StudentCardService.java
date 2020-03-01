@@ -5,8 +5,8 @@ import com.university.contractors.model.jpa.entity.Contract;
 import com.university.contractors.model.jpa.entity.Order;
 import com.university.contractors.model.jpa.entity.Student;
 import com.university.contractors.model.data.StudentCard;
-import com.university.contractors.repository.ContractRepository;
-import com.university.contractors.repository.StudentRepository;
+import com.university.contractors.repository.jpa.ContractRepository;
+import com.university.contractors.repository.jpa.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

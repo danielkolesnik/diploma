@@ -6,7 +6,7 @@ import com.university.contractors.model.jpa.entity.Student;
 import com.university.contractors.model.dao.StudentModelDAO;
 import com.university.contractors.model.dto.students.DTOBase;
 import com.university.contractors.model.dto.students.StudentViewDTO;
-import com.university.contractors.repository.StudentRepository;
+import com.university.contractors.repository.jpa.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

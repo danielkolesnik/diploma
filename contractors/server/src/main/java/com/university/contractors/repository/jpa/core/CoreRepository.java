@@ -1,4 +1,4 @@
-package com.university.contractors.repository.core;
+package com.university.contractors.repository.jpa.core;
 
 import org.hibernate.Session;
 import org.springframework.data.domain.Pageable;

@@ -1,6 +1,6 @@
 package com.university.contractors;
 
-import com.university.contractors.repository.core.CoreRepositoryImpl;
+import com.university.contractors.repository.jpa.core.CoreRepositoryImpl;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;

@@ -42,7 +42,7 @@ public class StudentModelDAO {
         Country localCountry = countryService.getLocalCountry();
 
         // Define base hql data Query
-        String hqlQuery = "SELECT new com.university.contractors.model.SearchStudentResult(c) FROM Contract c FETCH ALL PROPERTIES ";
+        String hqlQuery = "SELECT new com.university.contractors.model.data.SearchStudentResult(c) FROM Contract c FETCH ALL PROPERTIES ";
 
         // Define base hql count Query
         String hqlQueryCount = "SELECT count(c) FROM Contract c FETCH ALL PROPERTIES ";

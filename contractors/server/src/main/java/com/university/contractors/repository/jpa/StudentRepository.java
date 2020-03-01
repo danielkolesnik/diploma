@@ -1,7 +1,7 @@
-package com.university.contractors.repository;
+package com.university.contractors.repository.jpa;
 
 import com.university.contractors.model.jpa.entity.Student;
-import com.university.contractors.repository.core.CoreRepository;
+import com.university.contractors.repository.jpa.core.CoreRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;

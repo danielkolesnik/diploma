@@ -1,7 +1,7 @@
 package com.university.contractors.service;
 
 import com.university.contractors.model.jpa.entity.Country;
-import com.university.contractors.repository.CountryRepository;
+import com.university.contractors.repository.jpa.CountryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

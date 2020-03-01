@@ -10,7 +10,8 @@ import javax.persistence.*;
  * @author   Barmin Oleg
  * @version  0.1.1
  */
-@Entity(name = "educ_languages")
+@Entity
+@Table(name = "educ_languages")
 @Getter
 @Setter
 @NoArgsConstructor

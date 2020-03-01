@@ -1,12 +1,24 @@
 package com.university.contractors.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.google.common.base.Objects;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.Date;
 
-@Entity(name = "orders")
+/**
+ * Order
+ *
+ * @author   Barmin Oleg
+ * @version  0.1.1
+ */
+@Entity
+@Table(name = "orders")
+@NoArgsConstructor
+@Getter
+@Setter
+@ToString(of = {"id", "orderNumber"})
+@EqualsAndHashCode(of = {"id"})
 public class Order implements IdEntity<Long> {
 
     @Id
@@ -14,79 +26,22 @@ public class Order implements IdEntity<Long> {
     @Column(name = "id_order")
     private Long id;
 
+    @Column(name = "order_number")
     private String orderNumber;
 
+    @Column(name = "order_date")
     @JsonFormat(shape = JsonFormat.Shape.NUMBER)
     private Date orderDate;
 
+    @Column(name = "related_date")
     @JsonFormat(shape = JsonFormat.Shape.NUMBER)
     private Date relatedDate;
+
+    @Column(name = "note")
     private String note;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ref_type_order")
     private OrderType orderType;
 
-    @Override
-    public Long getId() {
-        return id;
-    }
-
-    @Override
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getOrderNumber() {
-        return orderNumber;
-    }
-
-    public void setOrderNumber(String orderNumber) {
-        this.orderNumber = orderNumber;
-    }
-
-    public Date getOrderDate() {
-        return orderDate;
-    }
-
-    public void setOrderDate(Date orderDate) {
-        this.orderDate = orderDate;
-    }
-
-    public Date getRelatedDate() {
-        return relatedDate;
-    }
-
-    public void setRelatedDate(Date relatedDate) {
-        this.relatedDate = relatedDate;
-    }
-
-    public String getNote() {
-        return note;
-    }
-
-    public void setNote(String note) {
-        this.note = note;
-    }
-
-    public OrderType getOrderType() {
-        return orderType;
-    }
-
-    public void setOrderType(OrderType orderType) {
-        this.orderType = orderType;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Order order = (Order) o;
-        return Objects.equal(id, order.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hashCode(id);
-    }
 }

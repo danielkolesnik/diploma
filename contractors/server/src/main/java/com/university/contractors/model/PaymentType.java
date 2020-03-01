@@ -1,8 +1,22 @@
 package com.university.contractors.model;
 
+import lombok.*;
+
 import javax.persistence.*;
 
+/**
+ * Payment Type
+ *
+ * @author   Barmin Oleg
+ * @version  0.1.1
+ */
 @Entity
+@Table(name = "payment_type")
+@NoArgsConstructor
+@Getter
+@Setter
+@ToString(of = {"id", "paymentTypeName"})
+@EqualsAndHashCode(of = {"id"})
 public class PaymentType implements IdEntity<Long> {
 
     @Id
@@ -10,23 +24,7 @@ public class PaymentType implements IdEntity<Long> {
     @Column(name = "id_payment_type")
     private Long id;
 
+    @Column(name = "payment_type_name")
     private String paymentTypeName;
 
-    @Override
-    public Long getId() {
-        return id;
-    }
-
-    @Override
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getPaymentTypeName() {
-        return paymentTypeName;
-    }
-
-    public void setPaymentTypeName(String paymentTypeName) {
-        this.paymentTypeName = paymentTypeName;
-    }
 }

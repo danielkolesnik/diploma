@@ -1,10 +1,22 @@
 package com.university.contractors.model;
 
-import com.google.common.base.Objects;
+import lombok.*;
 
 import javax.persistence.*;
 
+/**
+ * Payment Reason
+ *
+ * @author   Barmin Oleg
+ * @version  0.1.1
+ */
 @Entity
+@Table(name = "payment_reason")
+@NoArgsConstructor
+@Getter
+@Setter
+@ToString(of = {"id", "paymentReasonName"})
+@EqualsAndHashCode(of = {"id"})
 public class PaymentReason implements IdEntity<Long> {
 
     @Id
@@ -12,48 +24,10 @@ public class PaymentReason implements IdEntity<Long> {
     @Column(name = "id_payment_reason")
     private Long id;
 
+    @Column(name = "payment_reason_name")
     private String paymentReasonName;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ref_payment_type")
     private PaymentType paymentType;
-
-    @Override
-    public Long getId() {
-        return id;
-    }
-
-    @Override
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getPaymentReasonName() {
-        return paymentReasonName;
-    }
-
-    public void setPaymentReasonName(String paymentReasonName) {
-        this.paymentReasonName = paymentReasonName;
-    }
-
-    public PaymentType getPaymentType() {
-        return paymentType;
-    }
-
-    public void setPaymentType(PaymentType paymentType) {
-        this.paymentType = paymentType;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        PaymentReason that = (PaymentReason) o;
-        return Objects.equal(id, that.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hashCode(id);
-    }
 }

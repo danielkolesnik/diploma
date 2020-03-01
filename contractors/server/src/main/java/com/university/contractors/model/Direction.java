@@ -1,10 +1,22 @@
 package com.university.contractors.model;
 
-import com.google.common.base.Objects;
+import lombok.*;
 
 import javax.persistence.*;
 
+/**
+ * Direction
+ *
+ * @author   Barmin Oleg
+ * @version  0.1.1
+ */
 @Entity
+@Table(name = "direction")
+@NoArgsConstructor
+@Getter
+@Setter
+@ToString(of = {"id", "directionName"})
+@EqualsAndHashCode(of = {"id"})
 public class Direction implements IdEntity<Long> {
 
     @Id
@@ -12,48 +24,10 @@ public class Direction implements IdEntity<Long> {
     @Column(name = "id_direction")
     private Long id;
 
+    @Column(name = "direction_name")
     private String directionName;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ref_faculty")
     private Faculty faculty;
-
-    @Override
-    public Long getId() {
-        return id;
-    }
-
-    @Override
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getDirectionName() {
-        return directionName;
-    }
-
-    public void setDirectionName(String directionName) {
-        this.directionName = directionName;
-    }
-
-    public Faculty getFaculty() {
-        return faculty;
-    }
-
-    public void setFaculty(Faculty faculty) {
-        this.faculty = faculty;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Direction direction = (Direction) o;
-        return Objects.equal(id, direction.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hashCode(id);
-    }
 }

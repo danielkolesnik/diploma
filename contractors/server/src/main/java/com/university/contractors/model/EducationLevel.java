@@ -1,10 +1,23 @@
 package com.university.contractors.model;
 
 import com.google.common.base.Objects;
+import lombok.*;
 
 import javax.persistence.*;
 
+/**
+ * Education Level
+ *
+ * @author   Barmin Oleg
+ * @version  0.1.1
+ */
 @Entity
+@Table(name = "education_level")
+@NoArgsConstructor
+@Getter
+@Setter
+@ToString(of = {"id", "educLevelName"})
+@EqualsAndHashCode(of = {"id"})
 public class EducationLevel implements IdEntity<Long> {
 
     @Id
@@ -12,54 +25,12 @@ public class EducationLevel implements IdEntity<Long> {
     @Column(name = "id_educ_level")
     private Long id;
 
+    @Column(name = "educ_level_name")
     private String educLevelName;
+
+    @Column(name = "number_of_month")
     private Integer numberOfMonth;
+
+    @Column(name = "is_summer_month")
     private Boolean isSummerMonth;
-
-    @Override
-    public Long getId() {
-        return id;
-    }
-
-    @Override
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getEducLevelName() {
-        return educLevelName;
-    }
-
-    public void setEducLevelName(String educLevelName) {
-        this.educLevelName = educLevelName;
-    }
-
-    public Integer getNumberOfMonth() {
-        return numberOfMonth;
-    }
-
-    public void setNumberOfMonth(Integer numberOfMonth) {
-        this.numberOfMonth = numberOfMonth;
-    }
-
-    public Boolean getSummerMonth() {
-        return isSummerMonth;
-    }
-
-    public void setSummerMonth(Boolean summerMonth) {
-        isSummerMonth = summerMonth;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        EducationLevel that = (EducationLevel) o;
-        return Objects.equal(id, that.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hashCode(id);
-    }
 }

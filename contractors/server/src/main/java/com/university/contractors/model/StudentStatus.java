@@ -1,10 +1,23 @@
 package com.university.contractors.model;
 
 import com.google.common.base.Objects;
+import lombok.*;
 
 import javax.persistence.*;
 
+/**
+ * Student Status
+ *
+ * @author   Barmin Oleg
+ * @version  0.1.1
+ */
 @Entity
+@Table(name = "student_status")
+@NoArgsConstructor
+@Getter
+@Setter
+@ToString(of = {"id", "studentStatusName"})
+@EqualsAndHashCode(of = {"id"})
 public class StudentStatus implements IdEntity<Long> {
 
     @Id
@@ -12,36 +25,6 @@ public class StudentStatus implements IdEntity<Long> {
     @Column(name = "id_student_status")
     private Long id;
 
+    @Column(name = "student_status_name")
     private String studentStatusName;
-
-    @Override
-    public Long getId() {
-        return id;
-    }
-
-    @Override
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getStudentStatusName() {
-        return studentStatusName;
-    }
-
-    public void setStudentStatusName(String studentStatusName) {
-        this.studentStatusName = studentStatusName;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        StudentStatus that = (StudentStatus) o;
-        return Objects.equal(id, that.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hashCode(id);
-    }
 }

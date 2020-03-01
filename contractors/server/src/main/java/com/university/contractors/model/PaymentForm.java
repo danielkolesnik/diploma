@@ -1,46 +1,31 @@
 package com.university.contractors.model;
 
 import com.google.common.base.Objects;
+import lombok.*;
 
 import javax.persistence.*;
 
+/**
+ * Payment Form
+ *
+ * @author   Barmin Oleg
+ * @version  0.1.1
+ */
 @Entity
+@Table(name = "payment_form")
+@NoArgsConstructor
+@Getter
+@Setter
+@ToString(of = {"id", "paymentFormName"})
+@EqualsAndHashCode(of = {"id"})
 public class PaymentForm implements IdEntity<Long> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_payment_form")
     private Long id;
+
+    @Column(name = "payment_form_name")
     private String paymentFormName;
 
-    @Override
-    public Long getId() {
-        return id;
-    }
-
-    @Override
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getPaymentFormName() {
-        return paymentFormName;
-    }
-
-    public void setPaymentFormName(String paymentFormName) {
-        this.paymentFormName = paymentFormName;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        PaymentForm that = (PaymentForm) o;
-        return Objects.equal(id, that.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hashCode(id);
-    }
 }

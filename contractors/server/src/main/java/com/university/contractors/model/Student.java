@@ -2,11 +2,24 @@ package com.university.contractors.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.google.common.base.Objects;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.Date;
 
+/**
+ * Country
+ *
+ * @author   Barmin Oleg
+ * @version  0.1.1
+ */
 @Entity
+@Table(name = "student")
+@NoArgsConstructor
+@Getter
+@Setter
+@ToString(of = {"id", "name", "surname"})
+@EqualsAndHashCode(of = {"id"})
 public class Student implements IdEntity<Long> {
 
     @Id
@@ -27,70 +40,8 @@ public class Student implements IdEntity<Long> {
     @JsonFormat(shape = JsonFormat.Shape.NUMBER)
     private Date dateOfBirth;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ref_country")
     private Country country;
 
-    @Override
-    public Long getId() {
-        return id;
-    }
-
-    @Override
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getSurname() {
-        return surname;
-    }
-
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getMiddleName() {
-        return middleName;
-    }
-
-    public void setMiddleName(String middleName) {
-        this.middleName = middleName;
-    }
-
-    public Date getDateOfBirth() {
-        return dateOfBirth;
-    }
-
-    public void setDateOfBirth(Date dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
-    }
-
-    public Country getCountry() {
-        return country;
-    }
-
-    public void setCountry(Country country) {
-        this.country = country;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Student student = (Student) o;
-        return Objects.equal(id, student.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hashCode(id);
-    }
 }

@@ -1,12 +1,22 @@
 package com.university.contractors.model;
 
-import com.google.common.base.Objects;
+import lombok.*;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 
+/**
+ * User
+ *
+ * @author   Barmin Oleg
+ * @version  0.1.1
+ */
 @Entity
 @Table(name = "system_users")
+@NoArgsConstructor
+@Getter
+@Setter
+@ToString(of = {"id", "username"})
+@EqualsAndHashCode(of = {"id"})
 public class User implements IdEntity<Long> {
 
     @Id
@@ -14,60 +24,15 @@ public class User implements IdEntity<Long> {
     @Column(name = "id_user")
     private Long id;
 
-    @NotNull
+    @Column(name = "username", nullable = false)
     private String username;
 
-    @NotNull
+    @Column(name = "password_hash", nullable = false)
     private String passwordHash;
 
-    @NotNull
+
     @Enumerated(EnumType.STRING)
+    @Column(name = "user_role", nullable = false)
     private UserRole userRole;
 
-    @Override
-    public Long getId() {
-        return id;
-    }
-
-    @Override
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPasswordHash() {
-        return passwordHash;
-    }
-
-    public void setPasswordHash(String passwordHash) {
-        this.passwordHash = passwordHash;
-    }
-
-    public UserRole getUserRole() {
-        return userRole;
-    }
-
-    public void setUserRole(UserRole userRole) {
-        this.userRole = userRole;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        User user = (User) o;
-        return Objects.equal(id, user.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hashCode(id);
-    }
 }

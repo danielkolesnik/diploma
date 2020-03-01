@@ -1,14 +1,29 @@
 package com.university.contractors.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
+/**
+ * TODO: refactor into StudentSearchDTO
+ */
+@Getter
+@Setter
 public class SearchStudentResult {
 
     private Student student;
+
     private Contract contract;
+
     private Country country;
+
     private Integer course;
+
     private EducationForm educationForm;
+
     private Faculty faculty;
+
     private Direction direction;
+
     private EducationLevel educationLevel;
 
     // Added for compatibility with Hibernate
@@ -23,67 +38,4 @@ public class SearchStudentResult {
         this.educationLevel = contract.getEducationLevel();
     }
 
-    public Student getStudent() {
-        return student;
-    }
-
-    public void setStudent(Student student) {
-        this.student = student;
-    }
-
-    public Contract getContract() {
-        return contract;
-    }
-
-    public void setContract(Contract contract) {
-        this.contract = contract;
-    }
-
-    public Country getCountry() {
-        return country;
-    }
-
-    public void setCountry(Country country) {
-        this.country = country;
-    }
-
-    public Integer getCourse() {
-        return course;
-    }
-
-    public void setCourse(Integer course) {
-        this.course = course;
-    }
-
-    public EducationForm getEducationForm() {
-        return educationForm;
-    }
-
-    public void setEducationForm(EducationForm educationForm) {
-        this.educationForm = educationForm;
-    }
-
-    public Faculty getFaculty() {
-        return faculty;
-    }
-
-    public void setFaculty(Faculty faculty) {
-        this.faculty = faculty;
-    }
-
-    public Direction getDirection() {
-        return direction;
-    }
-
-    public void setDirection(Direction direction) {
-        this.direction = direction;
-    }
-
-    public EducationLevel getEducationLevel() {
-        return educationLevel;
-    }
-
-    public void setEducationLevel(EducationLevel educationLevel) {
-        this.educationLevel = educationLevel;
-    }
 }

@@ -1,8 +1,7 @@
 package com.university.contractors.controller;
 
 import com.university.contractors.config.Endpoints;
-import com.university.contractors.model.Direction;
-import com.university.contractors.model.EducationLanguage;
+import com.university.contractors.model.jpa.entity.Direction;
 import com.university.contractors.repository.DirectionRepository;
 import com.university.contractors.repository.FacultyRepository;
 import io.swagger.annotations.Api;

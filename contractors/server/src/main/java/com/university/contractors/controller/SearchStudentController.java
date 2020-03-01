@@ -2,7 +2,7 @@ package com.university.contractors.controller;
 
 import com.university.contractors.config.Endpoints;
 import com.university.contractors.controller.payload.SearchStudent;
-import com.university.contractors.model.SearchStudentResult;
+import com.university.contractors.model.data.SearchStudentResult;
 import com.university.contractors.repository.SearchStudentRepository;
 import com.university.contractors.service.StudentService;
 import io.swagger.annotations.Api;

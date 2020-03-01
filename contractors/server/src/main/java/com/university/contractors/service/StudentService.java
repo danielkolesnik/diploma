@@ -1,8 +1,8 @@
 package com.university.contractors.service;
 
 import com.university.contractors.controller.payload.SearchStudent;
-import com.university.contractors.model.SearchStudentResult;
-import com.university.contractors.model.Student;
+import com.university.contractors.model.data.SearchStudentResult;
+import com.university.contractors.model.jpa.entity.Student;
 import com.university.contractors.model.dao.StudentModelDAO;
 import com.university.contractors.model.dto.students.DTOBase;
 import com.university.contractors.model.dto.students.StudentViewDTO;

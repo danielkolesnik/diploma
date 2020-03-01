@@ -1,4 +1,4 @@
-package com.university.contractors.model;
+package com.university.contractors.model.jpa.domains;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

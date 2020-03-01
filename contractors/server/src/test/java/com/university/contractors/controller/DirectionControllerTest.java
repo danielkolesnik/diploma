@@ -1,7 +1,7 @@
 package com.university.contractors.controller;
 
 import com.university.contractors.config.Endpoints;
-import com.university.contractors.model.Direction;
+import com.university.contractors.model.jpa.entity.Direction;
 import com.university.contractors.model.DirectionBuilder;
 import io.restassured.response.Response;
 

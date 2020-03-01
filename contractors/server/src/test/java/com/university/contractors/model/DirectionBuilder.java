@@ -1,5 +1,8 @@
 package com.university.contractors.model;
 
+import com.university.contractors.model.jpa.entity.Direction;
+import com.university.contractors.model.jpa.entity.Faculty;
+
 public final class DirectionBuilder {
     private Direction direction;
 

@@ -1,6 +1,6 @@
 package com.university.contractors.service;
 
-import com.university.contractors.model.User;
+import com.university.contractors.model.jpa.entity.User;
 import com.university.contractors.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.AuthorityUtils;

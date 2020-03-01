@@ -1,6 +1,5 @@
-package com.university.contractors.model;
+package com.university.contractors.model.jpa.entity;
 
-import com.google.common.base.Objects;
 import lombok.*;
 
 import javax.persistence.*;

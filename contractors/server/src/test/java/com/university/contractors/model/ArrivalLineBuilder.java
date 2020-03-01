@@ -1,5 +1,7 @@
 package com.university.contractors.model;
 
+import com.university.contractors.model.jpa.entity.ArrivalLine;
+
 public final class ArrivalLineBuilder {
     private ArrivalLine arrivalLine;
 

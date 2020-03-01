@@ -1,5 +1,7 @@
 package com.university.contractors.model;
 
+import com.university.contractors.model.jpa.entity.StudentStatus;
+
 public final class StudentStatusBuilder {
     private StudentStatus studentStatus;
 

@@ -1,6 +1,6 @@
 package com.university.contractors.repository;
 
-import com.university.contractors.model.Country;
+import com.university.contractors.model.jpa.entity.Country;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;

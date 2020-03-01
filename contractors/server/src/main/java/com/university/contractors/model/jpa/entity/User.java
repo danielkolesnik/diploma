@@ -1,5 +1,6 @@
-package com.university.contractors.model;
+package com.university.contractors.model.jpa.entity;
 
+import com.university.contractors.model.jpa.domains.UserRole;
 import lombok.*;
 
 import javax.persistence.*;

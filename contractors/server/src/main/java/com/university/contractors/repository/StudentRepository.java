@@ -1,6 +1,6 @@
 package com.university.contractors.repository;
 
-import com.university.contractors.model.Student;
+import com.university.contractors.model.jpa.entity.Student;
 import com.university.contractors.repository.core.CoreRepository;
 import org.springframework.stereotype.Repository;
 

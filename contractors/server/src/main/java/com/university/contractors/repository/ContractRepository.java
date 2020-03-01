@@ -1,6 +1,6 @@
 package com.university.contractors.repository;
 
-import com.university.contractors.model.Contract;
+import com.university.contractors.model.jpa.entity.Contract;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;

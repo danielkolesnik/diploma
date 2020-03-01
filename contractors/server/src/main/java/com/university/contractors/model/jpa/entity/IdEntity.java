@@ -1,4 +1,4 @@
-package com.university.contractors.model;
+package com.university.contractors.model.jpa.entity;
 
 public interface IdEntity<I> {
 

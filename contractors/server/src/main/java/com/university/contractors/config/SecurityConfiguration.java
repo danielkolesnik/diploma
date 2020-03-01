@@ -1,6 +1,6 @@
 package com.university.contractors.config;
 
-import com.university.contractors.model.UserRole;
+import com.university.contractors.model.jpa.domains.UserRole;
 import com.university.contractors.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;

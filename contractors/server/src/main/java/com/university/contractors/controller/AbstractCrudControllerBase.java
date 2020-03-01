@@ -1,6 +1,6 @@
 package com.university.contractors.controller;
 
-import com.university.contractors.model.IdEntity;
+import com.university.contractors.model.jpa.entity.IdEntity;
 import org.apache.commons.lang3.ObjectUtils;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.http.HttpStatus;

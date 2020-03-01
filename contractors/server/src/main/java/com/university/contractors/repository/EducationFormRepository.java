@@ -1,6 +1,6 @@
 package com.university.contractors.repository;
 
-import com.university.contractors.model.EducationForm;
+import com.university.contractors.model.jpa.entity.EducationForm;
 import org.springframework.data.repository.CrudRepository;
 
 public interface EducationFormRepository extends CrudRepository<EducationForm, Long> {

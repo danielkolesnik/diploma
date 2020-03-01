@@ -1,5 +1,8 @@
 package com.university.contractors.model;
 
+import com.university.contractors.model.jpa.entity.PaymentReason;
+import com.university.contractors.model.jpa.entity.PaymentType;
+
 public final class PaymentReasonBuilder {
     private PaymentReason paymentReason;
 

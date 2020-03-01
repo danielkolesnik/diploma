@@ -1,5 +1,6 @@
-package com.university.contractors.model;
+package com.university.contractors.model.data;
 
+import com.university.contractors.model.jpa.entity.*;
 import lombok.Getter;
 import lombok.Setter;
 

@@ -1,10 +1,10 @@
 package com.university.contractors.service;
 
 import com.google.common.collect.Lists;
-import com.university.contractors.model.Contract;
-import com.university.contractors.model.Order;
-import com.university.contractors.model.Student;
-import com.university.contractors.model.StudentCard;
+import com.university.contractors.model.jpa.entity.Contract;
+import com.university.contractors.model.jpa.entity.Order;
+import com.university.contractors.model.jpa.entity.Student;
+import com.university.contractors.model.data.StudentCard;
 import com.university.contractors.repository.ContractRepository;
 import com.university.contractors.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;

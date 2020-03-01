@@ -1,5 +1,8 @@
-package com.university.contractors.model;
+package com.university.contractors.model.data;
 
+import com.university.contractors.model.jpa.entity.Contract;
+import com.university.contractors.model.jpa.entity.Order;
+import com.university.contractors.model.jpa.entity.Student;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

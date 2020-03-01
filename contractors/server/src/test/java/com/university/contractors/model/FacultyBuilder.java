@@ -1,5 +1,7 @@
 package com.university.contractors.model;
 
+import com.university.contractors.model.jpa.entity.Faculty;
+
 public final class FacultyBuilder {
     private Faculty faculty;
 

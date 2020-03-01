@@ -1,7 +1,7 @@
 package com.university.contractors.controller;
 
 import com.university.contractors.config.Endpoints;
-import com.university.contractors.model.StudentCard;
+import com.university.contractors.model.data.StudentCard;
 import com.university.contractors.service.StudentCardService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;

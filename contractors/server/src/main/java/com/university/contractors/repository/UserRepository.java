@@ -1,6 +1,6 @@
 package com.university.contractors.repository;
 
-import com.university.contractors.model.User;
+import com.university.contractors.model.jpa.entity.User;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

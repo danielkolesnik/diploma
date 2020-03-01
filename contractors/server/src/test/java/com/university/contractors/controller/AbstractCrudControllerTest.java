@@ -7,7 +7,7 @@ import com.university.contractors.controller.payload.LoginUser;
 import com.university.contractors.controller.payload.LoginUserBuilder;
 import com.university.contractors.controller.payload.SignUpUser;
 import com.university.contractors.controller.payload.SignUpUserBuilder;
-import com.university.contractors.model.IdEntity;
+import com.university.contractors.model.jpa.entity.IdEntity;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.http.Header;

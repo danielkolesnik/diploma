@@ -1,7 +1,7 @@
 package com.university.contractors.controller.payload;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.university.contractors.model.*;
+import com.university.contractors.model.jpa.entity.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

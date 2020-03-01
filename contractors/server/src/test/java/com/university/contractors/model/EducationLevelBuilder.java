@@ -1,5 +1,7 @@
 package com.university.contractors.model;
 
+import com.university.contractors.model.jpa.entity.EducationLevel;
+
 public final class EducationLevelBuilder {
     private EducationLevel educationLevel;
 

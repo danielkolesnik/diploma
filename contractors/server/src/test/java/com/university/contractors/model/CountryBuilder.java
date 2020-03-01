@@ -1,5 +1,7 @@
 package com.university.contractors.model;
 
+import com.university.contractors.model.jpa.entity.Country;
+
 public final class CountryBuilder {
     private Country country;
 

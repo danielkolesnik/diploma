@@ -2,9 +2,8 @@ package com.university.contractors.model.dao;
 
 import com.university.contractors.controller.payload.Nationality;
 import com.university.contractors.controller.payload.SearchStudent;
-import com.university.contractors.model.Country;
-import com.university.contractors.model.SearchStudentResult;
-import com.university.contractors.model.Student;
+import com.university.contractors.model.jpa.entity.Country;
+import com.university.contractors.model.data.SearchStudentResult;
 import com.university.contractors.service.CountryService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;

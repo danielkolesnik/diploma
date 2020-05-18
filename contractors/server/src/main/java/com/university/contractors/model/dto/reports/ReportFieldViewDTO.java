@@ -1,16 +1,11 @@
 package com.university.contractors.model.dto.reports;
 
 import com.university.contractors.model.dto.students.DTOBase;
-import com.university.contractors.model.jpa.domains.ReportFieldType;
 import com.university.contractors.model.jpa.entity.ReportFields;
 import com.university.contractors.repository.results.ReportFieldOption;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,10 +29,10 @@ public class ReportFieldViewDTO extends DTOBase<ReportFields> {
     @ApiModelProperty(position = 2)
     private String name;
 
-    @ApiModelProperty(position = 3)
+    @ApiModelProperty(position = 4)
     private List<ReportFieldOption> options;
 
-    @ApiModelProperty(position = 4, allowableValues = "TEXT,DROPDOWN,DATE")
+    @ApiModelProperty(position = 6, allowableValues = "TEXT,DROPDOWN,DATE")
     private String fieldType;
 
     @ApiModelProperty(position = 8)

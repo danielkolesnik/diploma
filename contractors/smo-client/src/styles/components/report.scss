@@ -1,0 +1,25 @@
+app-report {
+  width: 100%;
+
+
+  .custom-form-control {
+    &.is-invalid~.invalid-feedback {
+      display: block;
+    }
+  }
+
+
+  .field-option {
+    cursor: pointer;
+
+    &.delete-field-icon {
+      font-size: 25px;
+
+    }
+  }
+
+  input[type='checkbox'][disabled] + label.field-option {
+    cursor: default;
+  }
+
+}

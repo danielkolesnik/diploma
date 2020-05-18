@@ -7,7 +7,6 @@ import lombok.Setter;
 import lombok.ToString;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 
 /**
@@ -26,7 +25,7 @@ public class ReportDTO {
     private ReportFormat format;
 
     @ApiModelProperty(position = 2)
-    private List<ReportFieldSelectedDTO> fields;
+    private List<ReportFieldUploadDTO> fields;
 
     /**
      * Default constructor
@@ -35,9 +34,9 @@ public class ReportDTO {
         this.fields = new ArrayList<>();
     }
 
-    @java.beans.ConstructorProperties({"format"})
-    public ReportDTO(ReportFormat format) {
-        this();
+    @java.beans.ConstructorProperties({"format", "fields"})
+    public ReportDTO(ReportFormat format, List<ReportFieldUploadDTO> fields) {
         this.format = format;
+        this.fields = fields;
     }
 }

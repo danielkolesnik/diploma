@@ -1,0 +1,36 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <form [formGroup]="reportToolbarForm" class="" (ngSubmit)="handleAddField()" role="form">
+        <div class="form-row align-items-center my-3">
+          <div class="col">
+            <div class="d-flex align-baseline">
+              <label for="additionField" class="col-form-label sr-only">Додатковi поля</label>
+              <select name="additionField"
+                      id="additionField"
+                      class="form-control col-8"
+                      formControlName="additionField">
+                <option [ngValue]="null">Оберiть поле</option>
+                <option disabled> _______________</option>
+                <option *ngFor="let reportField of fields" [ngValue]="reportField">
+                  {{reportField.name}}
+                </option>
+              </select>
+              <button class="btn-outline-primary btn ml-4" type="submit">Додати поле</button>
+            </div>
+          </div>
+          <div class="col text-right">
+            <button class="btn-outline-success btn" (click)="triggerSubmitReport()">Згенерувати звiт</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <app-report [fields]="addedFields"
+                (onDeleteField)="handleDeleteField($event)"
+                (onReportSubmit)="handleReportValues($event)"
+                [submitReportSubject]="submitReportSubject">
+    </app-report>
+  </div>
+</div>

@@ -1,0 +1,104 @@
+<div class="col-12" id="reportComponent">
+  <div class="row">
+    <div class="col-12">
+      <form [formGroup]="reportForm">
+        <table class="table table-bordered">
+          <thead>
+          <tr>
+            <th scope="col">Поле</th>
+            <th scope="col">Значення</th>
+            <th scope="col" class="text-center">Пiдсумувати</th>
+            <th scope="col" class="text-center">Групувати</th>
+            <th scope="col" class="text-center">Видалити</th>
+          </tr>
+          </thead>
+          <tbody>
+            <tr *ngIf="!fields.length">
+              <td [colSpan]="5" class="text-center text-black-50 font-weight-bold font-italic">
+                Оберiть необхiднi поля для звiту
+              </td>
+            </tr>
+            <tr *ngFor="let field of fields">
+              <th scope="row">
+                {{field.name}}
+              </th>
+              <td *ngIf="field.fieldType == FIELD_TYPE.DROPDOWN">
+                <div class="form-group">
+                  <ng-multiselect-dropdown [placeholder]="'Оберiть значення поля'"
+                                           class="custom-form-control"
+                                           [ngClass]="{ 'is-invalid': submitted && f[field.id + '@values'].errors }"
+                                           [data]="field.options"
+                                           [settings]="dropdownSettings"
+                                           [formControlName]="field.id + '@values'">
+                  </ng-multiselect-dropdown>
+                  <div *ngIf="submitted && f[field.id + '@values'].errors" class="invalid-feedback">
+                    <div *ngIf="f[field.id + '@values'].errors.required">Необхідно обрати значення</div>
+                  </div>
+                </div>
+              </td>
+              <td *ngIf="field.fieldType == FIELD_TYPE.DATE && field.isEditable">
+                <div class="form-group">
+                  <input type="date"
+                         class="form-control"
+                         [ngClass]="{ 'is-invalid': submitted && f[field.id + '@value'].errors }"
+                         [id]="field.id + '@value'"
+                         [name]="field.id + '@value'"
+                         [formControlName]="field.id + '@value'"
+                         placeholder="Введiть значення поля"
+                         value="2000-01-30"/>
+                  <div *ngIf="submitted && f[field.id + '@value'].errors" class="invalid-feedback">
+                    <div *ngIf="f[field.id + '@value'].errors.required">Необхідно ввести значення</div>
+                  </div>
+                </div>
+              </td>
+              <td *ngIf="field.fieldType == FIELD_TYPE.TEXT && field.isEditable">
+                <div class="form-group">
+                  <input type="text"
+                         class="form-control"
+                         [ngClass]="{ 'is-invalid': submitted && f[field.id + '@value'].errors }"
+                         [id]="field.id + '@value'"
+                         [name]="field.id + '@value'"
+                         [formControlName]="field.id + '@value'"
+                         placeholder="Введiть значення поля"/>
+                  <div *ngIf="submitted && f[field.id + '@value'].errors" class="invalid-feedback">
+                    <div *ngIf="f[field.id + '@value'].errors.required">Необхідно ввести значення</div>
+                  </div>
+                </div>
+              </td>
+              <td *ngIf="!field.isEditable"></td>
+              <td class="text-center">
+                <div class="form-group">
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox"
+                           class="custom-control-input"
+                           [id]="field.id+'@sum'"
+                           [formControlName]="field.id+'@sum'"
+                           [name]="field.id+'@sum'"/>
+                    <label class="custom-control-label field-option" [for]="field.id+'@sum'"></label>
+                  </div>
+                </div>
+              </td>
+              <td class="text-center">
+                <div class="form-group">
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox"
+                           class="custom-control-input"
+                           [id]="field.id+'@group'"
+                           [formControlName]="field.id+'@group'"
+                           [name]="field.id+'@group'"/>
+                    <label class="custom-control-label field-option" [for]="field.id+'@group'"></label>
+                  </div>
+                </div>
+              </td>
+              <td class="text-center">
+                <span (click)="handleDeleteField(field)" class="delete-field-icon field-option text-danger">
+                  <fa-icon [icon]="faTrashAlt"></fa-icon>
+                </span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+    </div>
+  </div>
+</div>

@@ -24,5 +24,6 @@ public class EducationLanguage implements IdEntity<Long> {
     @Column(name = "id_educ_language")
     private Long id;
 
+    @Column(name = "educ_language_name")
     private String educLanguageName;
 }
